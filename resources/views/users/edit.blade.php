@@ -6,16 +6,21 @@ Alteração de Usuários
 
 @section('content')
 
-<h1>Usuários: Alteração</h1>
+@section('head')
+Alteração de Usuários
+@stop
+
 {!! Form::model($user, ['route' => ['usuarios.update', $user->id]]) !!}
 
 <input type="hidden" name="_method" value="PUT">
 
     @include('users.partials.form')
+
 {!! Form::close()!!}    
 
 <p>
     <a href="{{ route('usuarios.index') }}" >Voltar</a>
 </p>
+
 
 @stop

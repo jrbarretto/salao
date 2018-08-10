@@ -21,7 +21,7 @@ Cadastro de Companies
     
         <tr>
             <td>{{ $company->id}} </td>
-            <td>{{ $company->name}} </td>
+            <td>{{ $company->present()->shortName}} </td>
             <td>
             @foreach($company->establishments as $estab)
             | {{ $estab->name}}

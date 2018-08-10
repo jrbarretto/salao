@@ -65,6 +65,8 @@
 
         @include('layouts/flash-message')
         
+        <h3> @yield('head') </h3>
+
         @yield('content')
 
       </div>

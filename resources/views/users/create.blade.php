@@ -6,8 +6,10 @@ Novo Usuário
 
 @section('content')
 
+@section('head')
+Cadastro de Usuários
+@stop
 
-<h1>Novo Usuários</h1>
 {!! Form::open( ['route' => ['usuarios.store']]) !!}
     @include('users.partials.form')
 {!! Form::close()!!}    

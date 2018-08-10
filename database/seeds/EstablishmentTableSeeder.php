@@ -19,10 +19,10 @@ class EstablishmentTableSeeder extends Seeder
     
     private function createEstablishments(){
 
-        $estab2 = new App\Establishment();
-        $estab2->name = 'Elmos Bairro';
-        $estab2->company_id = 1;
-        $estab2->save();
+        $estab = new App\Establishment();
+        $estab->name = 'Elmos Bairro';
+        $estab->company_id = 1;
+        $estab->save();
         $this->command->info('Estab Elmos Bairro created');
 
         $estab = new App\Establishment();
@@ -30,6 +30,19 @@ class EstablishmentTableSeeder extends Seeder
         $estab->company_id = 1;
         $estab->save();
         $this->command->info('Estab Elmos CAV created');
+
+        $estab = new App\Establishment();
+        $estab->name = 'Concorrente Estab1';
+        $estab->company_id = 2;
+        $estab->save();
+        $this->command->info('Estab Concorrente 1 created');
+
+        $estab = new App\Establishment();
+        $estab->name = 'Concorrente Estab2';
+        $estab->company_id = 2;
+        $estab->save();
+        $this->command->info('Estab Concorrente 2 created');
+
 
     }
 }

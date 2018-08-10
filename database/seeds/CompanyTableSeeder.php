@@ -23,6 +23,13 @@ class CompanyTableSeeder extends Seeder
         $company->save(); 
         $this->command->info('Company Elmos created');
 
+        $company = new App\Company();
+        $company->name = 'Salão concorrente';
+        $company->email = 'concorrente@concorre.com.br';
+        $company->save(); 
+        $this->command->info('Company Concorrente created');
+
+
     }
 
 }

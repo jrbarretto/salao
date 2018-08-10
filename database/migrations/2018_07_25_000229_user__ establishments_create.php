@@ -20,6 +20,7 @@ class UserEstablishmentsCreate extends Migration
             $table->timestamps();
             $table->foreign('establishment_id')->references('id')->on('establishments');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->unique(['user_id', 'establishment_id']);
 
         });
     }

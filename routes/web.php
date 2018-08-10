@@ -15,6 +15,10 @@ use App\Company;
 */
 
 Route::resource('usuarios','UserController');
+
+Route::put('usuarios/establishment/Add',['as' => 'usuarios.establishment.add', 'uses' => 'UserController@addEstablishment']);
+Route::get('usuarios/establishment/Remove/{id_user}/{id_establishment}',['as' => 'usuarios.establishment.remove', 'uses' => 'UserController@removeEstablishment']);
+
 Route::resource('companies','CompanyController');
 
 /*
