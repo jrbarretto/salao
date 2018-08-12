@@ -32,7 +32,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        
+        $user = new User;
         $usrtypes = UsrType::all()->pluck('name','id');
         $empresas = Company::all()->pluck('name','id');
 
@@ -46,7 +46,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserFormRequest $request)
     {
         $user = new User();
         $user->password = "123456";
@@ -122,7 +122,7 @@ class UserController extends Controller
         $user = User::find($id);
 
         if(!empty($user)){
-            //$user->delete();
+            $user->delete();
             return redirect()->route('usuarios.index')->with(['success'=>'Usuário excluído com sucesso!']);
         }
 

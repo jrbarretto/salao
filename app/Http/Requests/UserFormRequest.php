@@ -23,9 +23,10 @@ class UserFormRequest extends FormRequest
      */
     public function rules()
     {
+        
         return [
                 'name' => 'required',
-                'email' => 'required',
+                'email' => 'required|unique:users,email,' . $this->route('usuario'),
         ];
     }
 
@@ -34,6 +35,7 @@ class UserFormRequest extends FormRequest
         return [
             'name.required' => 'O campo Nome é obrigatório!',
             'email.required'  => 'O campo E-mail é obrigatório!',
+            'email.unique' => 'E-mail já cadastrado para outro usuário.'
         ];
     }
 }
