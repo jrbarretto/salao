@@ -15,7 +15,7 @@ class Company extends Model
     protected $presenter = \Sys4Beauty\Presenter\CompanyPresenter::class;
 
     protected $fillable = [
-        'name',
+        'name','email'
     ];
 
     public function establishments(){

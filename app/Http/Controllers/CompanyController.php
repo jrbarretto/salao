@@ -36,7 +36,10 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $company = new Company();
+        $company->fill($request->only('name','email'));
+        $company->save();
+        return redirect()->route('companies.index',$company->id)->with(['success'=>'Empresa criada com sucesso!']);//
     }
 
     /**

@@ -1,12 +1,22 @@
 @extends('layouts.mainbs')
 
 @section('page-title')
-Cadastro de Companies
+Cadastro de Empresas
 @stop
 
 @section('content')
 
-<h1> Companies </h1>
+<h1> Empresas </h1>
+<!-- Button trigger modal -->
+
+<div>
+    <p>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#companyCreateModal">
+  Nova Empresa
+</button>
+</P>
+</div>
+
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
@@ -35,5 +45,9 @@ Cadastro de Companies
         @endforeach
     </tbody>
 </table>
+
+
+@include('companies.partials.createModal');
+
 
 @stop
